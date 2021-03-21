@@ -1,0 +1,28 @@
+---
+appveyor.yml:
+  delete: true
+.travis.yml:
+  delete: true
+.gitlab-ci.yml:
+  delete: true
+
+.rubocop.yml:
+  default_configs:
+    Layout/SpaceInsideHashLiteralBraces:
+      Description: Omit space inside hash literals to distinguish them from blocks.
+      EnforcedStyle: no_space
+    Style/GuardClause:
+      Description: |
+        TaskHelper::Error exceptions require multiple lines to construct in order
+        to add details. Cramming these onto one line would result in code that is
+        harder to read.
+      Enabled: false
+    Style/RegexpLiteral:
+      Description: |
+        Slashes are consistent for both the Ruby and Puppet Languages. %r{} is
+        useful when it avoids escaping slashes.
+      EnforcedStyle: slashes
+      AllowInnerSlashes: false
+
+spec/spec_helper.rb:
+  mock_with: ':rspec'
