@@ -1,0 +1,12 @@
+# This file can be used to install module dependencies for unit testing
+# See https://github.com/puppetlabs/puppetlabs_spec_helper#using-fixtures for details
+---
+fixtures:
+  forge_modules:
+    concat: "puppetlabs/concat"
+    stdlib: "puppetlabs/stdlib"
+
+    # Debugging
+    debug: 'nwops-debug'
+  symlinks:
+    tfc: '#{source_dir}'
